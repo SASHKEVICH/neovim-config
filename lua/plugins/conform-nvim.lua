@@ -53,7 +53,7 @@ return {
 			formatters = {
 				swiftformat_ext = {
 					command = "swiftformat",
-					args = function() 
+					args = function()
 						return {
 							"--config",
 							find_config() or "~/.config/nvim/.swiftformat", -- update fallback path if needed
