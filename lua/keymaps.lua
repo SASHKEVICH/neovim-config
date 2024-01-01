@@ -1,2 +1,2 @@
 vim.keymap.set("n", "<C-q>", ":wqa<CR>", {})
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+vim.keymap.set("t", "T<Esc>", "<C-\\><C-n>")
