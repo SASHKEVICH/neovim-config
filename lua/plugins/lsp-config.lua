@@ -34,7 +34,7 @@ return {
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			end
 
-			lspconfig["sourcekit"].setup({
+			lspconfig.sourcekit.setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
 				cmd = {
@@ -49,6 +49,7 @@ return {
 			})
 
 			lspconfig.lua_ls.setup({})
+			lspconfig.yamlls.setup({})
 
 			-- Keymaps
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover info" })

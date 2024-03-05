@@ -7,8 +7,8 @@ vim.cmd("set cursorline")
 -- Indentation options
 vim.cmd("set autoindent")
 vim.cmd("set noexpandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set shiftwidth=4")
+-- vim.cmd("set tabstop=4")
+-- vim.cmd("set shiftwidth=4")
 
 -- Search options
 vim.cmd("set hlsearch")

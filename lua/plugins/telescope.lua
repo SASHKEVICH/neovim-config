@@ -10,6 +10,8 @@ return {
 			vim.keymap.set("n", "<leader>fG", builtin.git_files, { desc = "Find files (git)" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
 
+			vim.keymap.set("n", "<leader>sc", ":Telescope colorscheme<CR>", { desc = "Change colorscheme" })
+
 			local telescope = require("telescope")
 			telescope.setup({
 				defaults = {
@@ -25,6 +27,11 @@ return {
 						".git/.*",
 						"Build",
 						".nvim",
+					},
+				},
+				pickers = {
+					colorscheme = {
+						enable_preview = true,
 					},
 				},
 			})
