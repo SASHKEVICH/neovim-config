@@ -6,9 +6,12 @@ vim.cmd("set cursorline")
 
 -- Indentation options
 vim.cmd("set autoindent")
-vim.cmd("set noexpandtab")
--- vim.cmd("set tabstop=4")
--- vim.cmd("set shiftwidth=4")
+-- vim.cmd("set noexpandtab")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=-1")
+vim.cmd("set smartindent")
+vim.cmd("filetype plugin indent on")
+vim.cmd("set shiftwidth=0")
 
 -- Search options
 vim.cmd("set hlsearch")
@@ -23,3 +26,5 @@ vim.cmd("set wrap")
 -- Other options
 vim.cmd("set nobackup")
 vim.g.mapleader = " "
+
+vim.g.editorconfig = true
