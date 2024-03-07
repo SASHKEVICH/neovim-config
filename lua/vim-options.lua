@@ -25,6 +25,7 @@ vim.cmd("set wrap")
 
 -- Other options
 vim.cmd("set nobackup")
+vim.cmd("set cmdheight=0")
 vim.g.mapleader = " "
 
 vim.g.editorconfig = true
