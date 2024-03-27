@@ -18,6 +18,13 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			{ "antosha417/nvim-lsp-file-operations", config = true },
 		},
+		keys = {
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover info" }),
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" }),
+			vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" }),
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" }),
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" }),
+		},
 		config = function()
 			local lspconfig = require("lspconfig")
 			local util = require("lspconfig.util")
@@ -28,7 +35,7 @@ return {
 				opts.buffer = bufnr
 
 				opts.desc = "Show line diagnostics"
-				vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+				vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, opts)
 
 				opts.desc = "Show documentation for what is under cursor"
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -50,13 +57,6 @@ return {
 
 			lspconfig.lua_ls.setup({})
 			lspconfig.yamlls.setup({})
-
-			-- Keymaps
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover info" })
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-			vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 		end,
 	},
 }
