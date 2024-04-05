@@ -60,7 +60,6 @@ return {
 			},
 			lualine_y = {
 				{ "filetype", icon_only = true },
-				{ "progress" },
 			},
 			lualine_z = {
 				{ "location", separator = { right = "" }, left_padding = 2 },
