@@ -1,6 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	enabled = false,
+	enabled = true,
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -8,7 +8,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	keys = {
-		-- vim.keymap.set("n", "<leader>ee", ":Neotree toggle left<CR>", { desc = "Open explorer" }),
+		vim.keymap.set("n", "<leader>ee", ":Neotree toggle left<CR>", { desc = "Open explorer" }),
 	},
 	opts = {
 		close_if_last_window = true,
