@@ -4,35 +4,8 @@ return {
 		tag = "0.1.5",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
-			defaults = {
-				prompt_prefix = "❯ ",
-				selection_caret = "❯ ",
-				file_ignore_patterns = {
-					"node_modules/.*",
-					"yarn.lock",
-					"package-lock.json",
-					"lazy-lock.json",
-					"init.sql",
-					"target/.*",
-					".git/.*",
-					"Build",
-					".nvim/*",
-				},
-			},
-			pickers = {
-				colorscheme = {
-					enable_preview = true,
-				},
-			},
-			extensions = {
-				fzf = {
-					fuzzy = true,
-					override_generic_sorter = true,
-					override_file_sorter = true,
-				},
-			},
 		},
-		config = function(_, opts)
+		config = function(_, _)
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find grep" })
@@ -41,7 +14,51 @@ return {
 
 			vim.keymap.set("n", "<leader>sc", ":Telescope colorscheme<CR>", { desc = "Change colorscheme" })
 
-			require("telescope").setup(opts)
+			require("telescope").setup({
+				defaults = {
+					prompt_prefix = "❯ ",
+					selection_caret = "❯ ",
+					hidden = true,
+					file_ignore_patterns = {
+						"node_modules/.*",
+						"yarn.lock",
+						"package-lock.json",
+						"lazy-lock.json",
+						"init.sql",
+						"target/.*",
+						".git/.*",
+						"Build",
+						"./.nvim/*",
+					},
+				},
+				pickers = {
+					colorscheme = {
+						enable_preview = true,
+					},
+					find_files = {
+						hidden = true,
+						find_command = {
+							"rg",
+							"--files",
+							"--hidden",
+							"--glob",
+							"!**/.git/*",
+							'--no-heading',
+							'--with-filename',
+							'--line-number',
+							'--column',
+							'--smart-case',
+						},
+					},
+				},
+				extensions = {
+					fzf = {
+						fuzzy = true,
+						override_generic_sorter = true,
+						override_file_sorter = true,
+					},
+				},
+			})
 		end,
 	},
 	{
