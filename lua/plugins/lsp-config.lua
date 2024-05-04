@@ -30,15 +30,12 @@ return {
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 			local opts = { noremap = true, silent = true }
-			local on_attach = function(_, bufnr)
-				opts.buffer = bufnr
 
-				opts.desc = "Show line diagnostics"
-				vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, opts)
+			opts.desc = "Show line diagnostics"
+			vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, opts)
 
-				opts.desc = "Show documentation for what is under cursor"
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-			end
+			opts.desc = "Show documentation for what is under cursor"
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
 			lspconfig.sourcekit.setup({
 				capabilities = capabilities,
