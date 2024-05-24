@@ -33,7 +33,7 @@ return {
 	opts = {
 		globalstatus = true,
 		options = {
-			theme = bubbles_theme,
+			theme = "gruvbox",
 			component_separators = "",
 			section_separators = { left = "", right = "" },
 		},
@@ -46,7 +46,7 @@ return {
 			"nvim-dap-ui",
 		},
 		sections = {
-			lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+			lualine_a = { { "mode", right_padding = 2 } },
 			lualine_b = { "branch" },
 			lualine_c = {
 				"%=", --[[ add your center compoentnts here in place of this comment ]]
@@ -64,7 +64,7 @@ return {
 				{ "filetype", icon_only = true },
 			},
 			lualine_z = {
-				{ "location", separator = { right = "" }, left_padding = 2 },
+				{ "location", left_padding = 2 },
 			},
 		},
 		inactive_sections = {
