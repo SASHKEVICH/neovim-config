@@ -19,11 +19,12 @@ return {
 
 		local function footer()
 			local stats = require("lazy").stats()
-			local datetime = os.date(" %d-%m-%Y   %H:%M:%S")
-			local version = vim.version()
-			local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
+			local pluginsLoaded = stats.loaded
+			local totalPluginsCount = stats.count
 
-			return datetime .. "   " .. stats.loaded .. " plugins" .. nvim_version_info
+			local datetime = os.date(" %d-%m-%Y   %H:%M:%S")
+
+			return pluginsLoaded .. "/" .. totalPluginsCount .. " plugins" .. " " .. datetime
 		end
 
 		dashboard.section.header.val = logo
