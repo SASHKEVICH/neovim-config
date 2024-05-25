@@ -1,8 +1,7 @@
 return {
 	"mfussenegger/nvim-dap",
-	dependencies = {
-		"wojciech-kulik/xcodebuild.nvim",
-	},
+	event = "VeryLazy",
+	lazy = true,
 	config = function()
 		local dap = require("dap")
 		local xcodebuild = require("xcodebuild.dap")

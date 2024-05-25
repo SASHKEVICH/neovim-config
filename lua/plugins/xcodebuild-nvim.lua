@@ -4,6 +4,8 @@ return {
 		"nvim-telescope/telescope.nvim",
 		"MunifTanjim/nui.nvim",
 	},
+	lazy = true,
+	event = "VeryLazy",
 	opts = {
 		code_coverage = {
 			enabled = true,
