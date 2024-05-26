@@ -29,6 +29,8 @@ local bubbles_theme = {
 
 return {
 	"nvim-lualine/lualine.nvim",
+	lazy = true,
+	event = "VeryLazy",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		globalstatus = true,
