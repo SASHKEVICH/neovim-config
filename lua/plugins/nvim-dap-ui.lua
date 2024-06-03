@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		"mfussenegger/nvim-dap",
 		"nvim-neotest/nvim-nio",
-		"folke/neodev.nvim",
 	},
 	lazy = true,
 	config = function()
